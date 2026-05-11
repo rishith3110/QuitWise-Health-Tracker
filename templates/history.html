@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>History</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="main-content">
+
+<h1>History Tracking</h1>
+
+{% for row in habits %}
+
+<div class="history-card">
+
+<h3>{{ row[6] }}</h3>
+
+<p>🚬 Smoking : {{ row[2] }}</p>
+
+<p>🍷 Alcohol : {{ row[3] }}</p>
+
+<p>😴 Sleep : {{ row[4] }} hrs</p>
+
+<p>🏃 Exercise : {{ row[5] }} min</p>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</body>
+
+</html>

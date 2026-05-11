@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Analytics</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+<div class="sidebar">
+
+<h2>QuitWise</h2>
+
+<ul>
+
+<li><a href="/dashboard">Dashboard</a></li>
+
+<li><a href="/history">History</a></li>
+
+<li><a href="/analytics">Analytics</a></li>
+
+<li><a href="/goals">Goals</a></li>
+
+<li><a href="/profile">Profile</a></li>
+
+<li><a href="/logout">Logout</a></li>
+
+</ul>
+
+</div>
+
+<div class="main-content">
+
+<h1>Analytics Dashboard</h1>
+
+<div class="charts-grid">
+
+<div class="chart-card">
+
+<h3>🚬 Smoking Analysis</h3>
+
+<canvas id="smokingChart"></canvas>
+
+</div>
+
+<div class="chart-card">
+
+<h3>🍷 Alcohol Analysis</h3>
+
+<canvas id="alcoholChart"></canvas>
+
+</div>
+
+<div class="chart-card">
+
+<h3>😴 Sleep Analysis</h3>
+
+<canvas id="sleepChart"></canvas>
+
+</div>
+
+<div class="chart-card">
+
+<h3>💪 Exercise Progress</h3>
+
+<canvas id="exerciseChart"></canvas>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+new Chart(
+document.getElementById('smokingChart'),
+{
+type:'line',
+
+data:{
+labels:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+
+datasets:[{
+label:'Smoking',
+
+data:[20,18,16,14,12,10,8],
+
+borderColor:'#EF4444',
+
+backgroundColor:'rgba(239,68,68,0.2)',
+
+tension:0.4,
+
+fill:true
+}]
+}
+}
+);
+
+new Chart(
+document.getElementById('alcoholChart'),
+{
+type:'doughnut',
+
+data:{
+labels:['Alcohol Used','Reduced'],
+
+datasets:[{
+data:[30,70],
+
+backgroundColor:[
+'#F97316',
+'#22C55E'
+]
+}]
+}
+}
+);
+
+new Chart(
+document.getElementById('sleepChart'),
+{
+type:'bar',
+
+data:{
+labels:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+
+datasets:[{
+label:'Sleep Hours',
+
+data:[4,5,6,7,8,7,8],
+
+backgroundColor:'#3B82F6'
+}]
+}
+}
+);
+
+new Chart(
+document.getElementById('exerciseChart'),
+{
+type:'pie',
+
+data:{
+labels:['Exercise','Inactive'],
+
+datasets:[{
+data:[75,25],
+
+backgroundColor:[
+'#22C55E',
+'#374151'
+]
+}]
+}
+}
+);
+
+</script>
+
+</body>
+
+</html>

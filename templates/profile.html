@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Profile</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+<div class="sidebar">
+
+<h2>QuitWise</h2>
+
+<ul>
+
+<li><a href="/dashboard">Dashboard</a></li>
+
+<li><a href="/history">History</a></li>
+
+<li><a href="/analytics">Analytics</a></li>
+
+<li><a href="/goals">Goals</a></li>
+
+<li><a href="/profile">Profile</a></li>
+
+<li><a href="/logout">Logout</a></li>
+
+</ul>
+
+</div>
+
+<div class="main-content">
+
+<h1>User Profile</h1>
+
+<div class="profile-container">
+
+<div class="profile-card">
+
+<div class="profile-top">
+
+<div class="profile-image">
+
+{{ username[0].upper() }}
+
+</div>
+
+<div>
+
+<h2>{{ username }}</h2>
+
+<p>{{ email }}</p>
+
+</div>
+
+</div>
+
+<div class="profile-details">
+
+<p>
+🔥 Smoke-Free Streak :
+<span>{{ smoke_streak }} Days</span>
+</p>
+
+<p>
+🍷 Alcohol-Free Streak :
+<span>{{ alcohol_streak }} Days</span>
+</p>
+
+<p>
+💪 Status :
+<span>Improving</span>
+</p>
+
+<p>
+🩺 Health Condition :
+<span>Under Monitoring</span>
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

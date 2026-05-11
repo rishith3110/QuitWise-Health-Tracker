@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+<div class="sidebar">
+
+<h2>QuitWise</h2>
+
+<ul>
+
+<li><a href="/dashboard">Dashboard</a></li>
+
+<li><a href="/history">History</a></li>
+
+<li><a href="/analytics">Analytics</a></li>
+
+<li><a href="/goals">Goals</a></li>
+
+<li><a href="/profile">Profile</a></li>
+
+<li><a href="/logout">Logout</a></li>
+
+</ul>
+
+</div>
+
+<div class="main-content">
+
+<h1>Health Dashboard</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>🔥 Smoke-Free Streak</h3>
+
+<p>{{ smoke_streak }} Days</p>
+
+</div>
+
+<div class="card">
+
+<h3>🍷 Alcohol-Free Streak</h3>
+
+<p>{{ alcohol_streak }} Days</p>
+
+</div>
+
+<div class="card">
+
+<h3>🩺 Health Analysis</h3>
+
+<p>{{ health_status|safe }}</p>
+
+</div>
+
+<div class="card">
+
+<h3>⚠ Risk Level</h3>
+
+<p>{{ risk_level }}</p>
+
+</div>
+
+<div class="card">
+
+<h3>💡 Suggestions</h3>
+
+<p>{{ suggestion|safe }}</p>
+
+</div>
+
+<div class="card">
+
+<h3>❤️ Health Score</h3>
+
+{% if risk_level == "High Risk" %}
+
+<p>35%</p>
+
+{% elif risk_level == "Moderate Risk" %}
+
+<p>60%</p>
+
+{% elif risk_level == "Low Risk" %}
+
+<p>80%</p>
+
+{% else %}
+
+<p>95%</p>
+
+{% endif %}
+
+</div>
+
+</div>
+
+<h2 class="title">Add Daily Activity</h2>
+
+<form method="POST" action="/add_data">
+
+<div class="form-grid">
+
+<input type="number"
+name="smoking"
+placeholder="Smoking Count"
+required>
+
+<input type="number"
+name="alcohol"
+placeholder="Alcohol Intake"
+required>
+
+<input type="number"
+name="sleep"
+placeholder="Sleep Hours"
+required>
+
+<input type="number"
+name="exercise"
+placeholder="Exercise Minutes"
+required>
+
+</div>
+
+<button type="submit">
+
+Add Activity
+
+</button>
+
+</form>
+
+<h2 class="title">Daily Activity</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Smoking</h3>
+
+<p>{{ smoking }}</p>
+
+</div>
+
+<div class="card">
+
+<h3>Alcohol</h3>
+
+<p>{{ alcohol }}</p>
+
+</div>
+
+<div class="card">
+
+<h3>Sleep</h3>
+
+<p>{{ sleep }} hrs</p>
+
+</div>
+
+<div class="card">
+
+<h3>Exercise</h3>
+
+<p>{{ exercise }} min</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>

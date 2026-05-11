@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Create Account</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+<script defer
+src="{{ url_for('static', filename='js/validation.js') }}">
+</script>
+
+</head>
+
+<body>
+
+<div id="loginPage">
+
+<div class="left-section">
+
+<h1>QuitWise</h1>
+
+<p>Create Your Health Account</p>
+
+</div>
+
+<div class="right-section">
+
+<div class="login-card">
+
+<h2>Create Account</h2>
+
+<p class="sub">
+Signup to continue
+</p>
+
+<form action="/signup"
+method="POST"
+onsubmit="return validateSignup()">
+
+<div class="input-box">
+
+<input type="text"
+name="username"
+placeholder="Username"
+required>
+
+</div>
+
+<div class="input-box">
+
+<input type="email"
+id="email"
+name="email"
+placeholder="Enter Gmail"
+required>
+
+</div>
+
+<div class="input-box">
+
+<input type="password"
+id="password"
+name="password"
+placeholder="Password"
+required>
+
+</div>
+
+<p id="error"></p>
+
+<button type="submit">
+
+Create Account
+
+</button>
+
+</form>
+
+<p style="margin-top:20px;">
+
+Already have account?
+
+<a href="/"
+style="color:#22C55E;">
+
+Login
+
+</a>
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
