@@ -67,26 +67,19 @@ https://quitwise-health-tracker.onrender.com
 ## Project Screenshots
 
 ### Login Page
-
-![Login](screenshots/login.png)
+![Login](login.png)
 
 ### Dashboard
-
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](dashboard.png)
 
 ### Analytics
-
-![Analytics](screenshots/analytics.png)
+![Analytics](analytics.png)
 
 ### Goals Page
-
-![Goals](screenshots/goals.png)
+![Goals](goals.png)
 
 ### Profile Page
-
-![Profile](screenshots/profile.png)
-
----
+![Profile](profile.png)
 
 ## Future Improvements
 
